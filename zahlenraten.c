@@ -1,21 +1,37 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-int main() {
+int main() { //main func
     
+    srand(time(NULL));
+    int GEHEIM = rand() % 100;
+    int versuch = 0;
     int zahl = 0;
-    int konst = 10;
-    printf("Geben sie eine zahl ein: ");
-    scanf("%d", &zahl);
+    
+    printf("Suche die Geheime Zahl!\n");
 
-    if (zahl > konst) {
-        printf("Deine Zahl ist grosser als die Konstante!");
+    for (versuch = 0; versuch < 7; versuch++) { //for schleife
+
+        scanf("%d", &zahl);
+        
+        if (zahl == -10) {                       //cheat code
+            printf("%d\n", GEHEIM);
+        }        
+        
+        else if (zahl > GEHEIM) {               
+            printf("Niedriger!\n");
+        }
+        
+        else if (zahl < GEHEIM) {                  
+            printf("Hoeher!\n");
+        }
+        
+        else if (zahl == GEHEIM) {              //zahl richtig geraten
+            printf("Du hast es geschafft!\n");
+            printf("Die Geheime Zahl war %d", GEHEIM);
+            versuch = 7;
+        }
     }
-    if (zahl < konst) {
-        printf("Deine Zahl ist kleiner als die Konstante!");
-    }
-    if (zahl == konst) {
-        printf("Gute Wahl!");
-    }
-     
     return 0;
 }
