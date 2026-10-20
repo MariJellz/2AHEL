@@ -3,8 +3,15 @@
 int main() {
 
     const char secret = 'x';
-    const char guess = 'y';
-
+    char guess;
+    
+    printf("Errate den Buchstaben: ");
+    
+    if (scanf(" %c", &guess) != 1) {;
+        printf("uengueltige eingabe");
+        return 1;
+    }
+    
     if (guess == secret) {
         printf("treffer, das secret ist %c", secret);
     }
