@@ -2,22 +2,20 @@
 
 int main() {
 
-    const char secret = 'x';
+    const char secret[] = "REDBULL4EVER"; //--> eig noch \0
     char guess;
+    int hits = 0;
     
-    printf("Errate den Buchstaben: ");
+    printf("Errate den grossen Buchstaben: ");
+    scanf(" %c", &guess);
     
-    if (scanf(" %c", &guess) != 1) {;
-        printf("uengueltige eingabe");
-        return 1;
+    for (int i = 0; i < sizeof(secret) - 1; i++) {
+        if (secret[i] == guess) {
+            hits++;
+        }
     }
     
-    if (guess == secret) {
-        printf("treffer, das secret ist %c", secret);
-    }
-    else {
-        printf("schade");
-    }
+    printf("%d sind im Wort enthalten", hits);
     
     return 0;
 }
