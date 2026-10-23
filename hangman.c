@@ -1,17 +1,18 @@
 #include <stdio.h>
 
 int main() {
-
-    const char secret[] = "REDBULL4EVER"; //--> eig noch /0
+    const char secret[] = "REDBULL4EVER";
     const int len = sizeof(secret) - 1;
-    char guessed[len];
-    char guess[120];
-    int hits = 0;
-    char anzahl = '_';
     
-    for (int a = 0; a < len; a++) {
-        guessed[a] = '_'
+    char guessed[len + 1]; 
+    char guess;
+    int hits = 0;
+    
+    // Initialisieren mit '_' und Null-Terminierung am Ende
+    for (int i = 0; i < len; i++) {
+        guessed[i] = '_';
     }
+    guessed[len] = '\0';
     
     printf("Errate den grossen Buchstaben: ");
     scanf(" %c", &guess);
@@ -23,12 +24,11 @@ int main() {
         }
     }
     
-    for (i = 0; i < len; i++) {
-        printf("%c",guessed );
+    for (int i = 0; i < len; i++) {
+        printf("%c ", guessed[i]);
     }
-
-
-    printf("%d sind im Wort enthalten", hits);
+    
+    printf("\n%d mal ist der Buchstabe im Wort enthalten.\n", hits);
     
     return 0;
 }
