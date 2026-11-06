@@ -1,47 +1,56 @@
 #include <stdio.h>
 
-    int count_hits(char guess, const char secret[], const char guessed[], int len) {
-    int hits = 0;
-        for (int i = 0; i < len; i++) {
-            if (secret[i] == guess) {
-                hits++;
-                guessed[i] = guess;
-            }
-        }
-    return hits;
+int strcmp(const char word1[], char word2[]) {
+    int diff = 0;
+    for (int i = 0; word1[i] != '\0'; diff |= word1[i] != word2[i], i++) {
+        
+        return diff;
     }
+}
+
+
 
 int main() {
     const char secret[] = "REDBULL4EVER";
     const int len = sizeof(secret) - 1;
     char guessed[len + 1]; 
     char guess;
-    int hits = 0;
-    
-    // Initialisieren mit '_' und Null-Terminierung am Ende
+    int fails = 0;
+
+    // 1. Einmalig vor der Schleife mit '_' initialisieren
     for (int i = 0; i < len; i++) {
         guessed[i] = '_';
     }
     guessed[len] = '\0';
-    
-    printf("Errate den grossen Buchstaben: "); 
-    scanf(" %c", &guess);
-    
 
-//    for (int i = 0; i < len; i++) {
-//        if (secret[i] == guess) {
-//            hits++;
-//            guessed[i] = guess;
-//        }
-//    }
-    hits = count_hits(guess, secret, guessed, len);
+    while (fails < 9) {
+        printf("\nErrate den grossen Buchstaben: "); 
+        scanf(" %c", &guess);
+        
+        // 2. Lokale Treffer-Variable für diese Runde (wird bei jedem Versuch auf 0 gesetzt)
+        int current_hits = 0;
 
-
-    for (int i = 0; i < len; i++) {
-        printf("%c ", guessed[i]);
+        for (int i = 0; i < len; i++) {
+            if (secret[i] == guess) {
+                current_hits++;
+                guessed[i] = guess; // Richtigen Buchstaben im Array speichern
+            }
+        }
+        
+        if (current_hits == 0) {
+            fails++;
+            printf("Der Buchstabe '%c' ist nicht im Wort.\n", guess);
+        } else {
+            printf("Der Buchstabe '%c' ist %d mal im Wort enthalten.\n", guess, current_hits);
+        }
+        
+        // Aktuellen Stand des Wortes ausgeben
+        for (int i = 0; i < len; i++) {
+            printf("%c ", guessed[i]);
+        }
+        
+        printf("\nFails: %d\n", fails);
     }
-    
-    printf("\n%d mal ist der Buchstabe im Wort enthalten.\n", hits);
-    
+
     return 0;
 }
