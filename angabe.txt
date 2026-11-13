@@ -1,0 +1,68 @@
+Kundenauftrag: Berechnung der Parkgebühren für einen kleinen Parkplatz
+1. Ausgangssituation
+Ich betreibe einen kleinen privaten Parkplatz in der Nähe eines Einkaufszentrums. Bisher berechne ich die Parkgebühren immer selbst. Das kostet Zeit und führt gelegentlich zu Fehlern, besonders wenn mehrere Kunden hintereinander bezahlen möchten.
+
+Deshalb benötige ich ein kleines Programm, das mir die Berechnung der Parkgebühren abnimmt.
+
+2. Dein Anliegen
+Ich möchte ein einfaches Programm, mit dem ich für jeden Kunden schnell den zu zahlenden Parkplatzpreis ermitteln kann.
+
+Die Gebühren richten sich danach, wie lange ein Fahrzeug auf meinem Parkplatz gestanden hat.
+
+3. Gewünschte Funktionen
+Das Programm soll folgende Funktionen bieten:
+
+Der Benutzer kann die Parkdauer in Stunden eingeben.
+
+Die erste Stunde kostet 2 €.
+
+Jede weitere angefangene Stunde kostet 1,50 €.
+
+Bei einer Parkdauer von mehr als 8 Stunden wird automatisch ein Tagespreis von 12 € berechnet.
+
+Bei einer ungültigen Eingabe, beispielsweise einer Parkdauer von 0 oder einer negativen Zahl, soll eine Fehlermeldung erscheinen.
+
+Nach der Berechnung soll der Benutzer gefragt werden, ob er einen weiteren Kunden abrechnen möchte.
+
+4. Bedienung
+Beim Start soll das Programm den Benutzer freundlich begrüßen.
+
+Anschließend soll es nach der Parkdauer des Kunden fragen.
+
+Nach der Eingabe soll der Benutzer folgende Informationen erhalten:
+
+Eingegebene Parkdauer
+
+Zu zahlender Gesamtbetrag
+
+Eine kurze Meldung, dass die Berechnung abgeschlossen ist
+
+Danach soll die Möglichkeit bestehen, die Parkgebühren für einen weiteren Kunden zu berechnen oder das Programm zu beenden.
+
+5. Beispiel
+Ein Kunde hat sein Auto 3 Stunden geparkt.
+
+Die Berechnung ergibt:
+
+Erste Stunde: 2,00 €
+
+Zweite Stunde: 1,50 €
+
+Dritte Stunde: 1,50 €
+
+Gesamtbetrag: 5,00 €
+
+Ein anderer Kunde hat 10 Stunden geparkt.
+
+Da die Parkdauer mehr als 8 Stunden beträgt, muss er nur den Tagespreis von 12,00 € bezahlen.
+
+6. Besondere Wünsche
+Die Geldbeträge sollen immer mit zwei Nachkommastellen angezeigt werden.
+
+Das Programm soll übersichtlich und einfach zu bedienen sein.
+
+Der Benutzer soll mehrere Kunden hintereinander abrechnen können.
+
+Wenn der Benutzer das Programm beendet, soll eine kurze Abschiedsnachricht erscheinen.
+
+Vielen Dank für deine Unterstützung! Ich freue mich auf eine einfache Lösung, die mir die tägliche Arbeit erleichtert.
